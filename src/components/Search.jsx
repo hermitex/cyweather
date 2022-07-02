@@ -8,7 +8,8 @@ const isValidCoordinate = (value, min, max) => {
 };
 
 const Search = () => {
-  const [weatherData, setweatherData] = useState([])
+  const [weatherData, setweatherData] = useState([]);
+
   return (
     <div>
       <Formik
@@ -39,8 +40,8 @@ const Search = () => {
               "relativehumidity_2m",
               "cloudcover_mid",
             ]
-          );   
-          setweatherData(data);      
+          );
+          setweatherData(data);
           setSubmitting(false);
         }}
       >
@@ -53,34 +54,41 @@ const Search = () => {
           handleSubmit,
           isSubmitting,
         }) => (
-          <form onSubmit={handleSubmit}>
-            <input
-              type="text"
-              name="latitude"
-              onChange={handleChange}
-              onBlur={handleBlur}
-              value={values.latitude}
-            />
-            <small>
-              {errors.latitude && touched.latitude && errors.latitude}
-            </small>
-            <input
-              type="text"
-              name="longitude"
-              onChange={handleChange}
-              onBlur={handleBlur}
-              value={values.longitude}
-            />
-            <small>
-              {errors.longitude && touched.longitude && errors.longitude}
-            </small>
+          <div className="formContainer">
+          <form id="form" onSubmit={handleSubmit}>
+            <div className="formControl">
+              <input
+                type="text"
+                name="latitude"
+                onChange={handleChange}
+                onBlur={handleBlur}
+                value={values.latitude}
+              />
+              <small>
+                {errors.latitude && touched.latitude && errors.latitude}
+              </small>
+            </div>
+            <div className="formControl">
+              <input
+                type="text"
+                name="longitude"
+                onChange={handleChange}
+                onBlur={handleBlur}
+                value={values.longitude}
+              />
+              <small>
+                {errors.longitude && touched.longitude && errors.longitude}
+              </small>
+            </div>
+
             <button type="submit" disabled={isSubmitting}>
               Get Forecast
             </button>
           </form>
+          </div>
         )}
       </Formik>
-      <DisplayForecast data={weatherData}/>
+      <DisplayForecast data={weatherData} />
     </div>
   );
 };

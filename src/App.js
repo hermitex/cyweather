@@ -1,4 +1,6 @@
 import './App.css';
+import './assets/css/dashboard.css'
+import './assets/css/hero.css';
 import Search from './components/Search';
 
 
