@@ -1,9 +1,10 @@
 import './App.css';
+import Search from './components/Search';
 
 function App() {
   return (
     <div className="App">
-     <h1>Hellow CyWeather!</h1>
+     <Search/>
     </div>
   );
 }
