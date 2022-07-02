@@ -15,7 +15,7 @@
 }
 
 video {
-  object-fit: cover;  
+  object-fit: cover;
   position: absolute;
   top: 0;
   left: 0;
@@ -25,10 +25,43 @@ video {
 
 .temp-widget {
   position: relative;
-  height: 10rem;
   width: 70vw;
   display: flex;
-flex-direction: row;
-justify-content: space-around;
-align-items: center;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  gap: 3rem;
 }
+
+.flex {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.flex.flex-row {
+  flex-direction: row;
+  justify-content: space-between;
+
+}
+
+.hero-chart-container {
+  height: 70%;
+  width: 70%;
+  background-color: #0a0a0aa1;
+  border-radius: 0.5rem;
+}
+
+.summary {
+  color: #fff;
+height: 50vh;
+width: 40%;
+}
+
+.bottom ,.first{
+    width: 100%;
+    justify-content: space-between;
+}
+
+

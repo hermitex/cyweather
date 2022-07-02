@@ -14,8 +14,8 @@ const Search = () => {
     <div>
       <Formik
         initialValues={{
-          latitude: "",
-          longitude: "",
+          latitude: "-1",
+          longitude: "36.5",
         }}
         validate={(values) => {
           const errors = {};
@@ -41,6 +41,7 @@ const Search = () => {
               "cloudcover_mid",
             ]
           );
+
           setweatherData(data);
           setSubmitting(false);
         }}
@@ -55,40 +56,39 @@ const Search = () => {
           isSubmitting,
         }) => (
           <div className="formContainer">
-          <form id="form" onSubmit={handleSubmit}>
-            <div className="formControl">
-              <input
-                type="text"
-                name="latitude"
-                onChange={handleChange}
-                onBlur={handleBlur}
-                value={values.latitude}
-              />
-              <small>
-                {errors.latitude && touched.latitude && errors.latitude}
-              </small>
-            </div>
-            <div className="formControl">
-              <input
-                type="text"
-                name="longitude"
-                onChange={handleChange}
-                onBlur={handleBlur}
-                value={values.longitude}
-              />
-              <small>
-                {errors.longitude && touched.longitude && errors.longitude}
-              </small>
-            </div>
-
-            <button type="submit" disabled={isSubmitting}>
-              Get Forecast
-            </button>
-          </form>
+            <form id="form" onSubmit={handleSubmit}>
+              <div className="formControl">
+                <input
+                  type="text"
+                  name="latitude"
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  value={values.latitude}
+                />
+                <small>
+                  {errors.latitude && touched.latitude && errors.latitude}
+                </small>
+              </div>
+              <div className="formControl">
+                <input
+                  type="text"
+                  name="longitude"
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  value={values.longitude}
+                />
+                <small>
+                  {errors.longitude && touched.longitude && errors.longitude}
+                </small>
+              </div>
+              <button type="submit" disabled={isSubmitting}>
+                Get Forecast
+              </button>
+            </form>
           </div>
         )}
       </Formik>
-      <DisplayForecast data={weatherData} />
+      <DisplayForecast data={weatherData} />      
     </div>
   );
 };
