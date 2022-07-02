@@ -1,4 +1,6 @@
 import { Formik } from "formik";
+import { useState } from "react";
+import DisplayForecast from "./DisplayForecast";
 import getWeatherData from "./getWeatherData";
 
 const isValidCoordinate = (value, min, max) => {
@@ -6,6 +8,7 @@ const isValidCoordinate = (value, min, max) => {
 };
 
 const Search = () => {
+  const [weatherData, setweatherData] = useState([])
   return (
     <div>
       <Formik
@@ -28,7 +31,7 @@ const Search = () => {
           return errors;
         }}
         onSubmit={async (values, { setSubmitting }) => {
-          const weatherData = await getWeatherData(
+          const data = await getWeatherData(
             [values.latitude, values.longitude],
             [
               "temperature_2m",
@@ -36,8 +39,8 @@ const Search = () => {
               "relativehumidity_2m",
               "cloudcover_mid",
             ]
-          );
-          console.log(weatherData);
+          );   
+          setweatherData(data);      
           setSubmitting(false);
         }}
       >
@@ -58,7 +61,9 @@ const Search = () => {
               onBlur={handleBlur}
               value={values.latitude}
             />
-            {errors.latitude && touched.latitude && errors.latitude}
+            <small>
+              {errors.latitude && touched.latitude && errors.latitude}
+            </small>
             <input
               type="text"
               name="longitude"
@@ -66,13 +71,16 @@ const Search = () => {
               onBlur={handleBlur}
               value={values.longitude}
             />
-            {errors.longitude && touched.longitude && errors.longitude}
+            <small>
+              {errors.longitude && touched.longitude && errors.longitude}
+            </small>
             <button type="submit" disabled={isSubmitting}>
               Get Forecast
             </button>
           </form>
         )}
       </Formik>
+      <DisplayForecast data={weatherData}/>
     </div>
   );
 };
