@@ -64,6 +64,7 @@ const Search = () => {
                   onChange={handleChange}
                   onBlur={handleBlur}
                   value={values.latitude}
+                  placeholder="Latitude"
                 />
                 <small>
                   {errors.latitude && touched.latitude && errors.latitude}
@@ -76,6 +77,7 @@ const Search = () => {
                   onChange={handleChange}
                   onBlur={handleBlur}
                   value={values.longitude}
+                  placeholder="Longitude"
                 />
                 <small>
                   {errors.longitude && touched.longitude && errors.longitude}

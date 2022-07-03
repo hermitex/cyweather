@@ -25,8 +25,8 @@ const Chart = ({ data, title, aspect, id }) => {
         >
           <defs>
             <linearGradient id="title" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="5%" stopColor="#8884d8" stopOpacity={0.8} />
-              <stop offset="95%" stopColor="#8884d8" stopOpacity={0} />
+              <stop offset="10%" stopColor="#090554" stopOpacity={0.8} />
+              <stop offset="90%" stopColor="#0A1929" stopOpacity={0} />
             </linearGradient>
           </defs>
           <XAxis dataKey="time" stroke="gray" />
@@ -36,7 +36,7 @@ const Chart = ({ data, title, aspect, id }) => {
           <Area
             type="monotone"
             dataKey={title}
-            stroke="#8884d8"
+            stroke="#090554"
             fillOpacity={1}
             fill="url(#title)"
           />

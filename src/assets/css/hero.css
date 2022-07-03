@@ -14,7 +14,7 @@
   margin: 1rem 0;
 }
 
-#hero.title{
+#hero.title {
   color: #fff !important;
 }
 
@@ -47,25 +47,23 @@ video {
 .flex.flex-row {
   flex-direction: row;
   justify-content: space-between;
-
 }
 
 .hero-chart-container {
   height: 70%;
   width: 70%;
-  background-color: #0a0a0aa1;
+  background-color: #508fd3c6;
   border-radius: 0.5rem;
 }
 
 .summary {
   color: #fff;
-height: 50vh;
-width: 40%;
+  height: 50vh;
+  width: 40%;
 }
 
-.bottom ,.first{
-    width: 100%;
-    justify-content: space-between;
+.bottom,
+.first {
+  width: 100%;
+  justify-content: space-between;
 }
-
-

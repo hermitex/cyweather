@@ -24,13 +24,13 @@ const Dashboard = ({ data, initializeDashBoard }) => {
         <div className="top temperature">
           <Hero data={temperature.hourly} title="Temperature" id="hero" />
           <div className="inner-widgets">
-            <div className="wind-speed">
+            <div className="wind-speed widget-container">
               <Widget data={wind.hourly} title="Wind Speed" />
             </div>
-            <div className="relative-humidity">
+            <div className="relative-humidity widget-container">
               <Widget data={humidity.hourly} title="Relative Humidity" />
             </div>
-            <div className="cloud-cover">
+            <div className="cloud-cover widget-container">
               <Widget data={cloud.hourly} title="Cloud Cover" />
             </div>
           </div>
