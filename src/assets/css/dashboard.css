@@ -98,15 +98,17 @@ button[type="submit"] {
   /* top: 0; */
 }
 
-<<<<<<< HEAD
 /* .date{
   width: 20vw;
 } */
-=======
 .text-muted {
   color: rgb(255, 166, 0);
   width: fit-content;
   position: absolute;
-  top: 2rem;
+  top: 1rem;
 }
->>>>>>> b83c5f8d898efd5ff9c6c383b29e33d22a11c416
+
+i:hover{
+  color: rgb(255, 166, 0);
+  cursor: pointer;
+}

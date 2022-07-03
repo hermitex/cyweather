@@ -71,6 +71,7 @@ video {
 .xl-font{
   font-size: 10rem;
   display: inline;
+  color: orange;
 }
 .xl-font sup{
   font-size: 1rem;
