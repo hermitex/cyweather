@@ -1,5 +1,5 @@
 import '../assets/css/hero.css';
-import video from "../assets/videos/clouds.mp4";
+import video from "../assets/videos/clouds1.mp4";
 import Widget from "./Widget";
 function Hero({ data, title, id }) {
   return (
