@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "../assets/css/dashboard.css";
+import CombinedLineChart from "./CombinedLineChart";
 import Hero from "./Hero";
 import Widget from "./Widget";
 
@@ -16,7 +17,7 @@ const Dashboard = ({ data, initializeDashBoard }) => {
       fetchData();
     }
   }, [data, initializeDashBoard]);
- 
+
   if (weatherData.length > 0) {
     const [temperature, wind, humidity, cloud] = [...weatherData];
     return (
@@ -32,6 +33,15 @@ const Dashboard = ({ data, initializeDashBoard }) => {
             </div>
             <div className="cloud-cover widget-container">
               <Widget data={cloud.hourly} title="Cloud Cover" />
+            </div>
+            <div className="combined-chart widget-container">
+              <CombinedLineChart
+                temperature={temperature.hourly}
+                wind={wind.hourly}
+                humidity={humidity.hourly}
+                clouds={cloud.hourly}
+                title="Combined Chart"
+              />
             </div>
           </div>
         </div>
