@@ -65,8 +65,9 @@ const Search = () => {
                   onBlur={handleBlur}
                   value={values.latitude}
                   placeholder="Latitude"
+                  autoFocus = {true}
                 />
-                <small>
+                <small className="text-muted">
                   {errors.latitude && touched.latitude && errors.latitude}
                 </small>
               </div>
@@ -79,7 +80,7 @@ const Search = () => {
                   value={values.longitude}
                   placeholder="Longitude"
                 />
-                <small>
+                <small className="text-muted">
                   {errors.longitude && touched.longitude && errors.longitude}
                 </small>
               </div>
