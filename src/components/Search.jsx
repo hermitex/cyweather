@@ -14,8 +14,8 @@ const Search = () => {
     <div>
       <Formik
         initialValues={{
-          latitude: "-1",
-          longitude: "36.5",
+          latitude: "",
+          longitude: "",
         }}
         validate={(values) => {
           const errors = {};
@@ -88,9 +88,23 @@ const Search = () => {
           </div>
         )}
       </Formik>
-      <Dashboard data={weatherData} />
+      <Dashboard data={weatherData}  initializeDashBoard={initializeDashBoard}/>
     </div>
   );
 };
+
+
+const initializeDashBoard = async () => {
+  const data = await getWeatherData(
+    [-1, 36.5],
+    [
+      "temperature_2m",
+      "windspeed_120m",
+      "relativehumidity_2m",
+      "cloudcover_mid",
+    ]
+  );
+  return data;
+}
 
 export default Search;
