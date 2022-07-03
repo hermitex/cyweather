@@ -48,6 +48,7 @@ body {
   padding: 2rem;
   background-color: #336293;
   color: #090554;
+
 }
 
 .formControl {
@@ -93,6 +94,8 @@ button[type="submit"] {
   justify-content: space-between;
   align-items: center; 
   gap: 2rem;
+ 
+  /* top: 0; */
 }
 
 .text-muted {

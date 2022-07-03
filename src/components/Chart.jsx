@@ -21,7 +21,7 @@ const Chart = ({ data, title, aspect, id }) => {
           width={830}
           height={250}
           data={chartData}
-          margin={{ top: 10, right: 10, left: 0, bottom: 0 }}
+          margin={{ top: 10, right: 15, left: 15, bottom: 0 }}
         >
           <defs>
             <linearGradient id="title" x1="0" y1="0" x2="0" y2="1">
@@ -29,8 +29,8 @@ const Chart = ({ data, title, aspect, id }) => {
               <stop offset="90%" stopColor="#0A1929" stopOpacity={0} />
             </linearGradient>
           </defs>
-          <XAxis dataKey="time" stroke="gray" />
-          <YAxis dataKey={title} stroke="gray" />
+          <XAxis dataKey="time" stroke="white" />
+          {/* <YAxis dataKey={title} stroke="gray" /> */}
           <CartesianGrid strokeDasharray="3 3" />
           <Tooltip />
           <Area
