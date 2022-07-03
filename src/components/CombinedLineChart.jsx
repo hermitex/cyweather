@@ -24,12 +24,12 @@ function CombinedLineChart({ temperature, wind, humidity, clouds, title }) {
         width={830}
         height={250}
         data={data}
-        margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
+        margin={{ top: 5, right: 15, left: 15, bottom: 5 }}
         aspect={2}
       >
         <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="time" />
-        <YAxis />
+        <XAxis dataKey="time" stroke="white"/>
+        {/* <YAxis /> */}
         <Tooltip />
         <Legend />
         <Line type="monotone" dataKey="temperature" stroke="#D21404" dot={false} />

@@ -67,3 +67,11 @@ video {
   width: 100%;
   justify-content: space-between;
 }
+
+.xl-font{
+  font-size: 10rem;
+  display: inline;
+}
+.xl-font sup{
+  font-size: 1rem;
+}

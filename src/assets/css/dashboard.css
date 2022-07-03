@@ -48,26 +48,65 @@ body {
   padding: 2rem;
   background-color: #336293;
   color: #090554;
+
 }
 
 .formControl {
-  display: flex;
   width: 20vw;
-  height: 7vh;
+  display: flex;
+  justify-content: space-between;
 }
 
 .formControl > input {
   width: 100%;
+  border-radius: 0.5rem;
+  outline: none;
+  border: 0;
+  text-align: center;
+  height: 7vh;
+  position: relative;
+}
+
+.formControl > input:focus {
+  border: 0.1rem solid #090554;
+}
+
+.formControl > input:hover,
+button[type="submit"]:hover {
+  cursor: pointer;
+}
+
+.formControl > input::placeholder {
+  text-align: center;
+  font-size: 1rem;
 }
 
 button[type="submit"] {
   width: 20%;
+  border-radius: 0.5rem;
+  border: 0;
+  height: 7vh;
 }
 
 #form {
+  height: 100%;
   display: flex;
+  justify-content: space-between;
+  align-items: center; 
+  gap: 2rem;
+ 
+  /* top: 0; */
 }
 
+<<<<<<< HEAD
 /* .date{
   width: 20vw;
 } */
+=======
+.text-muted {
+  color: rgb(255, 166, 0);
+  width: fit-content;
+  position: absolute;
+  top: 2rem;
+}
+>>>>>>> b83c5f8d898efd5ff9c6c383b29e33d22a11c416
