@@ -1,6 +1,7 @@
+import '../assets/css/hero.css';
 import video from "../assets/videos/clouds.mp4";
 import Widget from "./Widget";
-function Hero({ data, title }) {
+function Hero({ data, title, id }) {
   return (
     <div className="hero-container">
       <div className="video-wrapper">
@@ -32,7 +33,7 @@ function Hero({ data, title }) {
          </div>
         </div>
         <div className="hero-chart-container">
-        <Widget data={data} title={title} aspect={2}/>
+        <Widget data={data} title={title} aspect={2} id={id}/>
         </div>
        
       </div>

@@ -1,6 +1,6 @@
 import { Formik } from "formik";
 import { useState } from "react";
-import DisplayForecast from "./DisplayForecast";
+import Dashboard from "./Dashboard";
 import getWeatherData from "./getWeatherData";
 
 const isValidCoordinate = (value, min, max) => {
@@ -88,7 +88,7 @@ const Search = () => {
           </div>
         )}
       </Formik>
-      <DisplayForecast data={weatherData} />      
+      <Dashboard data={weatherData} />
     </div>
   );
 };
