@@ -46,6 +46,8 @@ body {
   border-radius: 0.5rem;
   margin: 0 auto;
   padding: 2rem;
+  background-color: #336293;
+  color: #090554;
 }
 
 .formControl {
@@ -65,3 +67,4 @@ button[type="submit"] {
 #form {
   display: flex;
 }
+
