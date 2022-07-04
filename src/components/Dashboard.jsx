@@ -4,26 +4,30 @@ import CombinedLineChart from "./CombinedLineChart";
 import Hero from "./Hero";
 import Widget from "./Widget";
 
-const Dashboard = ({ data, initializeDashBoard }) => {
+const Dashboard = ({ data, initializeDashBoard, location }) => {
+  console.log(location)
   const [weatherData, setweatherData] = useState([]);
   useEffect(() => {
     if (data.length > 0) {
       setweatherData(data);
     } else {
       async function fetchData() {
-        const response = await initializeDashBoard().then((data) => data);
+        const response = await initializeDashBoard(location).then((data) => data);
         setweatherData(response);
       }
       fetchData();
     }
-  }, [data, initializeDashBoard]);
+  }, [data, initializeDashBoard, location]);
 
   if (weatherData.length > 0) {
     const [temperature, wind, humidity, cloud] = [...weatherData];
     return (
       <div className="forecast-container">
         <div className="top temperature">
-          <Hero data={temperature.hourly} title="Temperature" id="hero" />
+          <div className="hero">
+             <Hero data={temperature.hourly} title="Temperature" id="hero" />
+          </div>
+         
           <div className="inner-widgets">
             <div className="wind-speed widget-container">
               <Widget data={wind.hourly} title="Wind Speed" />

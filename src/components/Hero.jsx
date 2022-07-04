@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "../assets/css/hero.css";
-import video from "../assets/videos/clouds1.mp4";
+import video from "../assets/videos/clouds.mp4";
 import Widget from "./Widget";
 
 const getDate = () => {
@@ -9,6 +9,15 @@ const getDate = () => {
   let minutes = date.getMinutes();
   let year = date.getFullYear();
   let seconds = date.getSeconds();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  if (seconds < 10) {
+    seconds = `0${seconds}`;
+  }
   return `${year} - ${hours}:${minutes}:${seconds}`;
 };
 
@@ -35,32 +44,34 @@ const Hero = ({ data, title, id }) => {
             <div className="location">
               <h3>
                 {" "}
-                <i class="fa-solid fa-location-dot"></i> Nairobi
+                <i className="fa-solid fa-location-dot"></i> Nairobi
               </h3>
             </div>
             <div className="date">
               <h3>
-                <i class="fa-regular fa-calendar-days"></i> {date}
+                <i className="fa-regular fa-calendar-days"></i> {date}
               </h3>
             </div>
           </div>
           <div className="middle flex">
             <div className="average-temp ">
               <div className="temp flex">
-                <var className="xl-font">12 <sup>0</sup></var>
+                <var className="xl-font">
+                  12 <sup>0</sup>
+                </var>
               </div>
               <small className="comment">Mostly Clear</small>
             </div>
           </div>
           <div className="bottom flex flex-row">
             <div className="wind">
-              <i class="fa-solid fa-wind"></i> 12km/h
+              <i className="fa-solid fa-wind"></i> 12km/h
             </div>
             <div className="humidity">
-              <i class="fa-solid fa-droplet"></i> 40
+              <i className="fa-solid fa-droplet"></i> 40
             </div>
             <div className="clouds">
-              <i class="fa-solid fa-cloud"></i> 10%
+              <i className="fa-solid fa-cloud"></i> 10%
             </div>
           </div>
         </div>

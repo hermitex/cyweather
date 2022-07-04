@@ -31,7 +31,7 @@ const createChartData = ({ time, ...params }, title) => {
       chartData.push({ "Cloud Cover": param, time: getTime(time[i]) })
     );
   } else if (title === "Temperature") {
-    console.log(params);
+
     params.temperature_2m.map((param, i) =>
       chartData.push({ Temperature: param, time: getTime(time[i]) })
     );

@@ -1,6 +1,7 @@
 import { Formik } from "formik";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Dashboard from "./Dashboard";
+import detectCurrentUserLocation from "./detectCurrentUserLocation";
 import getWeatherData from "./getWeatherData";
 
 const isValidCoordinate = (value, min, max) => {
@@ -9,13 +10,24 @@ const isValidCoordinate = (value, min, max) => {
 
 const Search = () => {
   const [weatherData, setweatherData] = useState([]);
+  const [location, setlocation] = useState({});
+
+  useEffect(() => {
+    async function getLocation() {
+      await detectCurrentUserLocation((coords) => cb(coords));
+      function cb(data) {
+        setlocation(data);
+      }
+    }
+    getLocation();
+  }, []);
 
   return (
-    <div>
+    <>
       <Formik
         initialValues={{
-          latitude: "",
-          longitude: "",
+          latitude: location[0],
+          longitude: location[1],
         }}
         validate={(values) => {
           const errors = {};
@@ -65,7 +77,7 @@ const Search = () => {
                   onBlur={handleBlur}
                   value={values.latitude}
                   placeholder="Latitude"
-                  autoFocus = {true}
+                  autoFocus={true}
                 />
                 <small className="text-muted">
                   {errors.latitude && touched.latitude && errors.latitude}
@@ -91,15 +103,20 @@ const Search = () => {
           </div>
         )}
       </Formik>
-      <Dashboard data={weatherData}  initializeDashBoard={initializeDashBoard}/>
-    </div>
+
+      <Dashboard
+        data={weatherData}
+        initializeDashBoard={initializeDashBoard}
+        location={location}
+      />
+    </>
   );
 };
 
-
-const initializeDashBoard = async () => {
+const initializeDashBoard = async (location) => {
+  console.log([location]);
   const data = await getWeatherData(
-    [-1, 36.5],
+    [...location],
     [
       "temperature_2m",
       "windspeed_120m",
@@ -108,6 +125,6 @@ const initializeDashBoard = async () => {
     ]
   );
   return data;
-}
+};
 
 export default Search;
