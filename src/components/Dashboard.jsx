@@ -24,8 +24,12 @@ const Dashboard = ({ data, initializeDashBoard, location }) => {
     return (
       <div className="forecast-container">
         <div className="top temperature">
-          <div className="hero">
-             <Hero data={temperature.hourly} title="Temperature" id="hero" />
+          <div className="hero">          
+             <Hero  temperature={temperature.hourly}
+                wind={wind.hourly}
+                humidity={humidity.hourly}
+                clouds={cloud.hourly}
+                title="Combined Chart"  id="hero" />
           </div>
          
           <div className="inner-widgets">
@@ -38,15 +42,10 @@ const Dashboard = ({ data, initializeDashBoard, location }) => {
             <div className="cloud-cover widget-container">
               <Widget data={cloud.hourly} title="Cloud Cover" />
             </div>
-            <div className="combined-chart widget-container">
-              <CombinedLineChart
-                temperature={temperature.hourly}
-                wind={wind.hourly}
-                humidity={humidity.hourly}
-                clouds={cloud.hourly}
-                title="Combined Chart"
-              />
+            <div className="temperature widget-container">
+              <Widget data={temperature.hourly} title="Temperature" />
             </div>
+           
           </div>
         </div>
       </div>

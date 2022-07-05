@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "../assets/css/hero.css";
 import video from "../assets/videos/clouds.mp4";
+import CombinedLineChart from "./CombinedLineChart";
 import Widget from "./Widget";
 
 const getDate = () => {
@@ -20,7 +21,7 @@ const getDate = () => {
   return `${hours}:${minutes}:${seconds}`;
 };
 
-const Hero = ({ data, title, id }) => {
+const Hero = ({ temperature, wind, humidity, clouds, title, id }) => {
   const [date, setdate] = useState("");
 
   useEffect(() => {
@@ -48,7 +49,7 @@ const Hero = ({ data, title, id }) => {
             </div>
             <div className="date">
               <h3>
-              <i class="fa-solid fa-clock"></i> {date}
+                <i class="fa-solid fa-clock"></i> {date}
               </h3>
             </div>
           </div>
@@ -59,7 +60,7 @@ const Hero = ({ data, title, id }) => {
                   12 <sup>0</sup>
                 </var>
                 <small className="comment">Mostly Clear</small>
-              </div>             
+              </div>
             </div>
           </div>
           <div className="bottom flex flex-row">
@@ -74,8 +75,17 @@ const Hero = ({ data, title, id }) => {
             </div>
           </div>
         </div>
-        <div className="hero-chart-container">
-          <Widget data={data} title={title} aspect={2} id={id} />
+        <div
+          className="combined-chart widget-container hero-chart-container"
+          id="hero"
+        >
+          <CombinedLineChart
+            temperature={temperature}
+            wind={wind}
+            humidity={humidity}
+            clouds={clouds}
+            title={title}
+          />
         </div>
       </div>
     </div>

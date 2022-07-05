@@ -5,7 +5,7 @@ import detectCurrentUserLocation from "./detectCurrentUserLocation";
 import getWeatherData from "./getWeatherData";
 
 const isValidCoordinate = (value, min, max) => {
-  return Number(value) && Number(value) >= min && Number(value) <= max;
+  return Number(value) && Number(value) > min && Number(value) < max;
 };
 
 const Search = () => {
@@ -97,9 +97,9 @@ const Search = () => {
                 </small>
               </div>
               <div className="formControl">
-              <button type="submit" disabled={isSubmitting}>
-              <i class="fa-solid fa-magnifying-glass"></i> Search
-              </button>
+                <button type="submit" disabled={isSubmitting}>
+                  <i class="fa-solid fa-magnifying-glass"></i> Search
+                </button>
               </div>
             </form>
           </div>
@@ -116,7 +116,6 @@ const Search = () => {
 };
 
 const initializeDashBoard = async (location) => {
-  console.log([location]);
   const data = await getWeatherData(
     [...location],
     [
