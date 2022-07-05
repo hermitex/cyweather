@@ -96,9 +96,11 @@ const Search = () => {
                   {errors.longitude && touched.longitude && errors.longitude}
                 </small>
               </div>
+              <div className="formControl">
               <button type="submit" disabled={isSubmitting}>
-                Get Forecast
+              <i class="fa-solid fa-magnifying-glass"></i> Search
               </button>
+              </div>
             </form>
           </div>
         )}

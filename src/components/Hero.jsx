@@ -48,7 +48,7 @@ const Hero = ({ data, title, id }) => {
             </div>
             <div className="date">
               <h3>
-                <i className="fa-regular fa-calendar-days"></i> {date}
+              <i class="fa-solid fa-clock"></i> {date}
               </h3>
             </div>
           </div>
