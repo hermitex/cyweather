@@ -7,7 +7,6 @@ const getDate = () => {
   let date = new Date();
   let hours = date.getHours();
   let minutes = date.getMinutes();
-  let year = date.getFullYear();
   let seconds = date.getSeconds();
   if (hours < 10) {
     hours = `0${hours}`;
@@ -18,7 +17,7 @@ const getDate = () => {
   if (seconds < 10) {
     seconds = `0${seconds}`;
   }
-  return `${year} - ${hours}:${minutes}:${seconds}`;
+  return `${hours}:${minutes}:${seconds}`;
 };
 
 const Hero = ({ data, title, id }) => {

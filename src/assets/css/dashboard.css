@@ -38,16 +38,16 @@ body {
 .formContainer {
   display: flex;
   height: 15vh;
-  /* min-width: fit-content;  */
-  width: 100%;
-  justify-content: center;
+  width: 100vw;
+  /* justify-content: center;
   align-items: center;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
     rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
   border-radius: 0.5rem;
   padding: 2rem;
   background-color: #336293;
-  color: #090554;
+  color: #090554; */
+  border: 1px solid red;
 }
 
 .formControl {
@@ -93,6 +93,11 @@ button[type="submit"] {
   justify-content: space-between;
   align-items: center;
   gap: 2rem;
+  border: 1px solid red;
+  background-color: #336293;
+
+  width: 90vw !important;
+
 }
 
 

@@ -51,7 +51,7 @@ video {
 
 .hero-chart-container {
   height: 70%;
-  width: 70%;
+  width: 50%;
   background-color: #508fd3c6;
   border-radius: 0.5rem;
 }
@@ -68,11 +68,35 @@ video {
   justify-content: space-between;
 }
 
-.xl-font{
+.xl-font {
   font-size: 10rem;
   display: inline;
   color: orange;
 }
-.xl-font sup{
+.xl-font sup {
   font-size: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  .hero-container {
+   
+    height: 55vh;
+   
+  }
+  .temp-widget {
+    position: relative;
+    width: 95%;
+    height: 95%;  
+  }
+
+  .temp-widget > * {
+    width: 100%;
+  }
+
+  .flex {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
 }
