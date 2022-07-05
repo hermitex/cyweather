@@ -1,8 +1,9 @@
 import axios from "axios";
-const getWeatherData = async ([latitude, longitude], params) => {
+
+const getCurrentWeather = async (latitude, longitude, params) => {
   let promises = params.map(async (param) => {
     try {
-      let url = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&hourly=${param}&current_weather=true&timezone=UTC`;
+      const url = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&daily=${param}`;
       const response = await axios.get(url);
       return response.data;
     } catch (error) {
@@ -12,4 +13,4 @@ const getWeatherData = async ([latitude, longitude], params) => {
   return await Promise.all(promises);
 };
 
-export default getWeatherData;
+export default getCurrentWeather;
