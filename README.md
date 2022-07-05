@@ -8,9 +8,9 @@
 
 ![image](./assets/images/cyweather-home.png)
 
-## LiveStream Page
+## Forecasts Section
 
-![image](./assets/images/cyweather-stream.png)
+![image](./assets/images/cyweather-forecasts.png)
 
 ## Live Demo on Youtube
 
@@ -22,7 +22,7 @@
   - [Cyweather is A web app that allows a user to access and visualize hourly weather forecast data. The purpose of the application is to enable airstrip operators to make decisions and plans about their flight routines, 24/06/2022](#cyweather-is-a-web-app-that-allows-a-user-to-access-and-visualize-hourly-weather-forecast-data-the-purpose-of-the-application-is-to-enable-airstrip-operators-to-make-decisions-and-plans-about-their-flight-routines-24062022)
     - [By Tiberius Mairura](#by-tiberius-mairura)
   - [Landing Page](#landing-page)
-  - [LiveStream Page](#livestream-page)
+  - [Forecasts Section](#forecasts-section)
   - [Live Demo on Youtube](#live-demo-on-youtube)
   - [Table of Content](#table-of-content)
   - [Description](#description)
@@ -51,7 +51,9 @@ As a user you should be able to:
 2. `Enter` valid longitude
 3. `Submit` the values
 4. `See` Summary of weather forecasts corresponing to the provided coordinates
+
 5. ## OR
+
 6. `Allow` GPS position so that you can get the weather forecasts for your current location automatically.
 
 [Go Back to the top](#Cyweather)
