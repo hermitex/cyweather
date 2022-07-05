@@ -17,7 +17,7 @@ const filterTime = (data) => {
 };
 
 const createCombinedChartData = (temperature, wind, humidity, clouds) => {
-   let chartData = [];
+  let chartData = [];
 
   temperature.time.map((time, i) =>
     chartData.push({
@@ -32,7 +32,6 @@ const createCombinedChartData = (temperature, wind, humidity, clouds) => {
   chartData = chartData
     .filter(filterTime)
     .sort((a, b) => +a.time.split(":")[0] - +b.time.split(":")[0]);
-
 
   return chartData;
 };

@@ -26,8 +26,8 @@ const Search = () => {
     <>
       <Formik
         initialValues={{
-          latitude: location[0],
-          longitude: location[1],
+          latitude: "",
+          longitude: "",
         }}
         validate={(values) => {
           const errors = {};
@@ -98,7 +98,7 @@ const Search = () => {
               </div>
               <div className="formControl">
                 <button type="submit" disabled={isSubmitting}>
-                  <i class="fa-solid fa-magnifying-glass"></i> Search
+                  <i className="fa-solid fa-magnifying-glass"></i> Search
                 </button>
               </div>
             </form>

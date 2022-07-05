@@ -1,18 +1,18 @@
 import { useEffect, useState } from "react";
 import "../assets/css/dashboard.css";
-import CombinedLineChart from "./CombinedLineChart";
 import Hero from "./Hero";
 import Widget from "./Widget";
 
 const Dashboard = ({ data, initializeDashBoard, location }) => {
-  console.log(location)
   const [weatherData, setweatherData] = useState([]);
   useEffect(() => {
     if (data.length > 0) {
       setweatherData(data);
     } else {
       async function fetchData() {
-        const response = await initializeDashBoard(location).then((data) => data);
+        const response = await initializeDashBoard(location).then(
+          (data) => data
+        );
         setweatherData(response);
       }
       fetchData();
@@ -20,32 +20,40 @@ const Dashboard = ({ data, initializeDashBoard, location }) => {
   }, [data, initializeDashBoard, location]);
 
   if (weatherData.length > 0) {
-    const [temperature, wind, humidity, cloud] = [...weatherData];
+    const [temperature, wind, humidity, cloud] = [
+      weatherData[0].hourly,
+      weatherData[1].hourly,
+      weatherData[2].hourly,
+      weatherData[3].hourly,
+    ];
     return (
       <div className="forecast-container">
         <div className="top temperature">
-          <div className="hero">          
-             <Hero  temperature={temperature.hourly}
-                wind={wind.hourly}
-                humidity={humidity.hourly}
-                clouds={cloud.hourly}
-                title="Combined Chart"  id="hero" />
+          <div className="hero">
+            <Hero
+              temperature={temperature}
+              wind={wind}
+              humidity={humidity}
+              clouds={cloud}
+              currentWeather={weatherData[0].current_weather}
+              title="Combined Chart"
+              id="hero"
+            />
           </div>
-         
+
           <div className="inner-widgets">
             <div className="wind-speed widget-container">
-              <Widget data={wind.hourly} title="Wind Speed" />
+              <Widget data={wind} title="Wind Speed" />
             </div>
             <div className="relative-humidity widget-container">
-              <Widget data={humidity.hourly} title="Relative Humidity" />
+              <Widget data={humidity} title="Relative Humidity" />
             </div>
             <div className="cloud-cover widget-container">
-              <Widget data={cloud.hourly} title="Cloud Cover" />
+              <Widget data={cloud} title="Cloud Cover" />
             </div>
             <div className="temperature widget-container">
-              <Widget data={temperature.hourly} title="Temperature" />
+              <Widget data={temperature} title="Temperature" />
             </div>
-           
           </div>
         </div>
       </div>

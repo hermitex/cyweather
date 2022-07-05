@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import "../assets/css/hero.css";
 import video from "../assets/videos/clouds.mp4";
 import CombinedLineChart from "./CombinedLineChart";
-import Widget from "./Widget";
 
 const getDate = () => {
   let date = new Date();
@@ -21,7 +20,46 @@ const getDate = () => {
   return `${hours}:${minutes}:${seconds}`;
 };
 
-const Hero = ({ temperature, wind, humidity, clouds, title, id }) => {
+const evaluateWeatherCode = (code) => {
+  let status = "";
+  if (code === 0) {
+    status = "Clear Sky";
+  } else if (code >= 1 && code <= 3) {
+    status = "Mainly clear, partly cloudy, and overcast";
+  } else if (code >= 45 && code <= 48) {
+    status = "Fog and depositing rime fog";
+  } else if (code >= 51 && code <= 55) {
+    status = "Drizzle: Light, moderate, and dense intensity";
+  } else if (code >= 56 && code <= 57) {
+    status = "Freezing Drizzle: Light and dense intensity";
+  } else if (code >= 61 && code <= 65) {
+    status = "Rain: Slight, moderate and heavy intensity";
+  } else if (code >= 66 && code <= 67) {
+    status = "Freezing Rain: Light and heavy intensity";
+  } else if (code >= 71 && code <= 75) {
+    status = "Snow fall: Slight, moderate, and heavy intensity";
+  } else if (code === 77) {
+    status = "	Snow grains";
+  } else if (code >= 80 && code <= 82) {
+    status = "Rain showers: Slight, moderate, and violent";
+  } else if (code >= 85 && code <= 86) {
+    status = "Snow showers slight and heavy";
+  } else if ((code = 95)) {
+    status = "	Thunderstorm: Slight or moderate";
+  } else if (code >= 96 && code <= 99) {
+    status = "Thunderstorm with slight and heavy hail";
+  }
+  return status;
+};
+
+const Hero = ({
+  temperature,
+  wind,
+  humidity,
+  clouds,
+  title,
+  currentWeather,
+}) => {
   const [date, setdate] = useState("");
 
   useEffect(() => {
@@ -49,7 +87,7 @@ const Hero = ({ temperature, wind, humidity, clouds, title, id }) => {
             </div>
             <div className="date">
               <h3>
-                <i class="fa-solid fa-clock"></i> {date}
+                <i className="fa-solid fa-clock"></i> {date}
               </h3>
             </div>
           </div>
@@ -57,15 +95,18 @@ const Hero = ({ temperature, wind, humidity, clouds, title, id }) => {
             <div className="average-temp ">
               <div className="temp flex">
                 <var className="xl-font">
-                  12 <sup>0</sup>
+                  {currentWeather.temperature} <sup>0</sup>
                 </var>
-                <small className="comment">Mostly Clear</small>
+                <small className="comment">
+                  {evaluateWeatherCode(currentWeather.weathercode)}
+                </small>
               </div>
             </div>
           </div>
           <div className="bottom flex flex-row">
             <div className="wind">
-              <i className="fa-solid fa-wind"></i> 12km/h
+              <i className="fa-solid fa-wind"></i>{" "}
+              <span>{currentWeather.windspeed} </span>km/h
             </div>
             <div className="humidity">
               <i className="fa-solid fa-droplet"></i> 40
