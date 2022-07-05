@@ -6,11 +6,11 @@
 
 ## Landing Page
 
-![image](./assets/images/cyweather-home.png)
+![image](./src/assets/images/cyweather-home.png)
 
 ## Forecasts Section
 
-![image](./assets/images/cyweather-forecasts.png)
+![image](./src/assets/images/cyweather-forecasts.png)
 
 ## Live Demo on Youtube
 
