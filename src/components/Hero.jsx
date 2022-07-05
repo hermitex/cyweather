@@ -58,8 +58,8 @@ const Hero = ({ data, title, id }) => {
                 <var className="xl-font">
                   12 <sup>0</sup>
                 </var>
-              </div>
-              <small className="comment">Mostly Clear</small>
+                <small className="comment">Mostly Clear</small>
+              </div>             
             </div>
           </div>
           <div className="bottom flex flex-row">

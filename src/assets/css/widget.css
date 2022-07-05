@@ -4,7 +4,12 @@
 
 .widget-container{
     background-color: #5090d3;
-    /* border-color: rgb(30, 73, 118); */
+  }
 
+@media screen and (max-width: 768px){
+    .widget-container h1{
+     font-size: 1rem;
+    text-align: center;
+    }
 }
 

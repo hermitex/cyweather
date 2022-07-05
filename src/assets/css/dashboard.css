@@ -17,6 +17,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
 }
 
 .inner-widgets {
@@ -93,7 +94,7 @@ button[type="submit"] {
   gap: 2rem;
   background-color: #336293;
   padding: 0.1rem 7rem;
-  width: 100%;
+  width: 100vw;
   border-radius: 0.5rem;
 }
 
@@ -113,6 +114,7 @@ i:hover {
   color: rgb(255, 166, 0);
   cursor: pointer;
 }
+
 
 @media screen and (max-width: 768px) {
   .inner-widgets {
@@ -137,7 +139,7 @@ i:hover {
   #form {
     position: fixed;
     top: 0;
-    height: 17vh;
+    height: 15vh;
     gap: 1;
     z-index: 1000;
     width: 100vw;
@@ -145,6 +147,7 @@ i:hover {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    border-bottom: 1px solid rgb(255, 166, 0);;
   }
 
   .formControl > input {
@@ -152,15 +155,15 @@ i:hover {
     margin: 0 auto;
   }
 
-  .text-muted {
-   
-    top: 0.5rem;
+  .text-muted {   
+    top: 0.1rem;
   }
+
 }
 
 @media screen and (min-width: 768px) {
   #form {
-    width: 90vw;
+    width: 100vw;
     border-radius: 0.5rem;
   }
 }

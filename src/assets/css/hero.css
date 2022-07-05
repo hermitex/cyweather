@@ -99,4 +99,7 @@ video {
     flex-direction: column;
     justify-content: space-between;
   }
+  .xl-font{
+    font-size: 7rem !important;
+  }
 }
