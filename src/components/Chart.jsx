@@ -29,7 +29,6 @@ const Chart = ({ data, title, aspect, id }) => {
             </linearGradient>
           </defs>
           <XAxis dataKey="time" stroke="white" />
-          {/* <YAxis dataKey={title} stroke="gray" /> */}
           <CartesianGrid strokeDasharray="3 3" />
           <Tooltip />
           <Area

@@ -122,7 +122,7 @@ const initializeDashBoard = async (location) => {
       "temperature_2m",
       "windspeed_120m",
       "relativehumidity_2m",
-      "cloudcover_mid",    
+      "cloudcover_mid",
     ]
   );
   return data;

@@ -3,7 +3,6 @@ import "../assets/css/hero.css";
 import video from "../assets/videos/clouds.mp4";
 import CombinedLineChart from "./CombinedLineChart";
 
-
 const getDate = () => {
   let date = new Date();
   let hours = date.getHours();
@@ -60,9 +59,7 @@ const Hero = ({
   clouds,
   title,
   currentWeather,
-  id,
 }) => {
-
   const [date, setdate] = useState("");
 
   useEffect(() => {
