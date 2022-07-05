@@ -12,9 +12,10 @@ Cyweather is A web app that allows a user to access and visualize hourly weather
 
 ![image](./src/assets/images/cyweather-forecasts.png)
 
-## Live Demo on Youtube
+## Live Demo on 
 
-[Youtube Video](https://youtu.be/3Jqf2TfmNEE)
+
+[Youtube Video](https://youtu.be/pjMLm8xdYA0)
 
 ## Table of Content
 
