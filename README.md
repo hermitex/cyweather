@@ -1,8 +1,8 @@
 # Cyweather
 
-## Cyweather is A web app that allows a user to access and visualize hourly weather forecast data. The purpose of the application is to enable airstrip operators to make decisions and plans about their flight routines, 24/06/2022
+Cyweather is A web app that allows a user to access and visualize hourly weather forecast data. The purpose of the application is to enable airstrip operators to make decisions and plans about their flight routines.
 
-### By Tiberius Mairura
+### By Tiberius Mairura, 24/06/2022
 
 ## Landing Page
 
@@ -12,9 +12,10 @@
 
 ![image](./src/assets/images/cyweather-forecasts.png)
 
-## Live Demo on Youtube
+## Live Demo on 
 
-[Youtube Video](https://youtu.be/3Jqf2TfmNEE)
+
+[Youtube Video](https://youtu.be/pjMLm8xdYA0)
 
 ## Table of Content
 
