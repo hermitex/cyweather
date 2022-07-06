@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import "../assets/css/hero.css";
-import video from "../assets/videos/clouds.mp4";
 import CombinedLineChart from "./CombinedLineChart";
 
 const getDate = () => {
@@ -72,7 +71,10 @@ const Hero = ({
     <div className="hero-container">
       <div className="video-wrapper">
         <video playsInline autoPlay muted loop poster="">
-          <source src={video} type="video/mp4" />
+          <source
+            src="https://res.cloudinary.com/hng-pre-internship/video/upload/v1657117549/cyweather/videos/clouds_safjw1.mp4"
+            type="video/mp4"
+          />
           Your browser does not support the video tag.
         </video>
       </div>
