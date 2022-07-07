@@ -107,6 +107,7 @@ As a user you should be able to:
 ## Known Bugs
 
 - Sometimes the time for the weather forecast could be wrong
+- The location name does not display correctly
 
 ****
 
